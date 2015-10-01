@@ -1,28 +1,30 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include "stdafx.h"
+#include <conio.h>
+#include <string>
+#include <iostream>
 
-# Precompiled Headers
-*.gch
-*.pch
+struct Amigo
+{
+	int idAmigo;
+	string nombre;
+	int edad;
+};
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+void ordenar_amigos(Amigo vector_a[], int n)
+{
+	Amigo aux;
+	int i,j;
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n-1;j++)
+		{
+			if(vector_a[j].edad > vector_a[j+1].edad)
+			{
+				aux = vector_a[j];
+				vector_a[j] = vector_a[j+1];
+				vector_a[j+1] = aux;
+			}
+		}
+	}
+}
 
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
